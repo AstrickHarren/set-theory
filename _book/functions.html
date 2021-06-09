@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.2 Functions | Axioms of Set Theory</title>
+  <meta name="description" content="A review in the set theory" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.2 Functions | Axioms of Set Theory" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A review in the set theory" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.2 Functions | Axioms of Set Theory" />
+  
+  <meta name="twitter:description" content="A review in the set theory" />
+  
+
+<meta name="author" content="Astrick" />
+
+
+<meta name="date" content="2021-06-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="relations.html"/>
+<link rel="next" href="cardinals.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+            TagSide: "left",
+            Macros: {
+                dom: '\\mathop{\\mathrm{dom}}',
+                ran: '\\mathop{\\mathrm{ran}}'
+            }
+        }
+    });
+</script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A review of set theory</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>1</b> Axioms</a></li>
+<li class="chapter" data-level="2" data-path="relations-and-functions.html"><a href="relations-and-functions.html"><i class="fa fa-check"></i><b>2</b> Relations and Functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>2.1</b> Relations</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2.2</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cardinals.html"><a href="cardinals.html"><i class="fa fa-check"></i><b>3</b> Cardinals</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Axioms of Set Theory</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="functions" class="section level2" number="2.2">
+<h2><span class="header-section-number">2.2</span> Functions</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-14" class="definition"><strong>Definition 2.7  (Functions)  </strong></span>A relation <span class="math inline">\(f\)</span> is a <em>function</em> or <em>mapping</em> if
+<span class="math display">\[
+\forall x, y, z, (xfy \vee xfz \implies y = z) 
+\]</span>
+or that for every <span class="math inline">\(x \in \dom f\)</span>, there is a unique <span class="math inline">\(y\)</span> with <span class="math inline">\(xfy\)</span>.</p>
+The unique <span class="math inline">\(y\)</span> is defined as <span class="math inline">\(f(x)\)</span> if <span class="math inline">\(x \in \dom f\)</span>, i.e., <span class="math inline">\((x, y) \in f \iff x \in \dom f \vee y = f(x)\)</span>.
+</div>
+
+<div class="proposition">
+<span id="prp:unnamed-chunk-15" class="proposition"><strong>Proposition 2.2  </strong></span>For all functions <span class="math inline">\(f, g\)</span>, <span class="math inline">\(f = g\)</span> iff <span class="math inline">\(\dom f = \dom g\)</span> and <span class="math inline">\(f(x) = g(x)\)</span> for all <span class="math inline">\(x \in \dom f\)</span>.
+</div>
+
+<div class="proof">
+ <span class="proof"><em>Proof. </em></span> If <span class="math inline">\(\dom f = \dom g\)</span> and <span class="math inline">\(\forall x \in \dom f, (f(x) = g(x))\)</span>,
+<span class="math display">\[\begin{align*}
+(x, y) \in f &amp;\implies x \in \dom f \vee y = f(x) \\ 
+&amp;\implies x \in \dom g \vee y = g(x) \\ 
+&amp;\implies (x, y) \in g
+\end{align*}\]</span>
+The other direction follows from the property<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> of the equality <span class="math inline">\(f = g\)</span>.
+</div>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-17" class="definition"><strong>Definition 2.8  </strong></span>A function <span class="math inline">\(f\)</span> is</p>
+<ul>
+<li><em>on</em> <span class="math inline">\(A\)</span> if <span class="math inline">\(\dom f = A\)</span></li>
+<li><em>into</em> <span class="math inline">\(B\)</span> if <span class="math inline">\(\ran f \subset B\)</span></li>
+<li><em>onto</em> <span class="math inline">\(B\)</span> if <span class="math inline">\(\ran f = B\)</span></li>
+</ul>
+Denote <span class="math inline">\(f: A \to B\)</span> as a shorthand notation for <span class="math inline">\(f\)</span> is a function on <span class="math inline">\(A\)</span> and into <span class="math inline">\(B\)</span>.
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-18" class="definition"><strong>Definition 2.9  (Identity)  </strong></span>The <em>identity function</em> of a set <span class="math inline">\(A\)</span> is defined as the function
+<span class="math display">\[
+\iota_A = \{ (x, y) : x,y \in A \vee x = y \} 
+\]</span>
+which exists as a susbet of <span class="math inline">\(A \times A\)</span>. Therefore, <span class="math inline">\((x, x) \in \iota_A\)</span> iff <span class="math inline">\(x \in A\)</span>.
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-19" class="definition"><strong>Definition 2.10  (restriction)  </strong></span>The <em>restriction</em> of <span class="math inline">\(f\)</span> to <span class="math inline">\(C\)</span> is defined as the a subset of <span class="math inline">\(f\)</span>:<br />
+<span class="math display">\[
+f \restriction C = \{ (x, y) \in f: x \in C \}
+\]</span>
+Immediately, <span class="math inline">\(f \restriction C = f \circ \iota_C\)</span>.
+</div>
+
+<div class="proof">
+ <span class="proof"><em>Proof. </em></span> <span class="math display">\[\begin{align*}
+(x, y) \in f \circ \iota_C &amp;\iff \exists z, &amp;&amp; x \iota_C z \vee zfy \\ 
+&amp;\iff \exists z, &amp;&amp; z = x \vee x \iota_C z \vee zfy \\ 
+&amp;\iff &amp;&amp;x \iota_C x \vee xfy \\ 
+&amp;\iff &amp;&amp;x \in C \vee (x, y) \in f \\ 
+&amp;\iff &amp;&amp;(x, y) \in f \restriction C
+\end{align*}\]</span>
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-21" class="definition"><strong>Definition 2.11  (Injection)  </strong></span>A function <span class="math inline">\(f\)</span> is <em>injective</em> or <em>one-to-one</em> if for any <span class="math inline">\(x, y, z\)</span>, <span class="math inline">\(xfz, yfz\)</span> implies <span class="math inline">\(x = y\)</span>. In other words, if <span class="math inline">\(f(x) = f(y)\)</span> then <span class="math inline">\(x = y\)</span> for all <span class="math inline">\(x, y \in \dom f\)</span>.
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-22" class="definition"><strong>Definition 2.12  (Inverse)  </strong></span>A function <span class="math inline">\(f\)</span> is <em>invertible</em> if its inverse <span class="math inline">\(f^{-1}\)</span> is also a function.
+</div>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-23" class="theorem"><strong>Theorem 2.3  </strong></span>A function <span class="math inline">\(f\)</span> is invertible iff <span class="math inline">\(f\)</span> is 1-1.
+</div>
+
+<div class="proof">
+ <span class="proof"><em>Proof. </em></span> <span class="math display">\[\begin{align*}
+&amp;\forall x, y, z, &amp;&amp; xfz \vee yfz \implies x = y \\ 
+\iff &amp;\forall x, y, z, &amp;&amp; zf^{-1}x \vee zf^{-1}y \implies x = y
+\end{align*}\]</span>
+by the definition of <span class="math inline">\(f^{-1}\)</span>.
+</div>
+
+</div>
+<!-- </div> -->
+<div class="footnotes">
+<hr />
+<ol start="2">
+<li id="fn2"><p>Specifically the <a href="https://en.wikipedia.org/wiki/First-order_logic#Equality_and_its_axioms">subsitution axiom of equality</a><a href="functions.html#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="relations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="cardinals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

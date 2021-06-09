@@ -1,0 +1,191 @@
+# Relations and Functions 
+
+```{definition, name="Ordered Pair"}
+Define $(a, b) = \{\{a\}, \{a, b\}\}$.
+```
+
+```{theorem}
+If $(a, b) = (x, y)$, iff $a = x$ and $b = y$. 
+```
+
+```{proof}
+If $\{\{a\}, \{a, b\}\} = \{\{x\}, \{x, y\}\}$, and $a \ne b, x \ne y$, then $\{a\} \ne \{x, y\}$, otherwise $x = y$, and likewise $\{x\} \ne \{a, b\}$. Hence $\{a\} = \{x\}$, and $\{a, b\} = \{x, y\}$, showing $a = x, b = y$ easily. 
+
+If $a = b$, then $\{a\} = (a, b) = \{\{x\}, \{x, y\}\}$, also showing $b = a = x = y$ easily. Similar arguments concludes the case when $x = y$. 
+```
+
+```{definition}
+Denote the class
+$$
+\{ (x, y): P(x, y) \} = \{ z: \exists x, y, (z = (x, y) \vee P(z)) \} 
+$$
+where $P$ is any predicate, and $P(x, y)$ is the shorthand notation of $P((x, y))$. 
+```
+
+```{proposition}
+If $A = \{ (x, y): P(x, y) \}$ is a class, then 
+$$ (x, y) \in A \iff P(x, y) $$
+for all $x, y$. Hence if for all $x, y$, $P(x, y)$ implies $(x, y) \in S$ for some set $S$, then $A$ exists as a subset of $S$. 
+```
+
+```{proof}
+Observe
+\begin{align*}
+(x, y) \in A &\iff \exists x', y', &&(x, y) = (x', y') \vee P(x', y') \\ 
+&\iff &&P(x, y) \\ 
+\end{align*}
+
+If $P(x, y) \implies (x, y) \in S$, 
+\begin{align*} 
+z \in A &\implies \exists x, y, && z = (x, y) \vee P(x, y) \\ 
+&\implies \exists x, y, && z = (x, y) \vee (x, y) \in S \\ 
+&\implies && z \in S
+\end{align*}
+```
+
+```{definition, name="Cartesian Product"}
+Define
+$$
+A \times B = \{ (a, b): a \in A, b \in B \}
+$$
+which exists as a subset of $\mathcal P (\mathcal P( A \cup B))$ because $(a, b) \subset \mathcal P(A \cup B)$ for all $a \in A, b \in B$. 
+```
+
+## Relations
+
+```{definition, name="Relation"}
+A set $R$ is a _relation_ if all of its elements are ordered pairs^[Notice this makes $\emptyset$ also a relation]. Denote $xRy$ as $(x, y) \in R$ for convinence. The sets 
+$$
+\dom R = \{ x: \exists y, (xRy) \} \\ 
+\ran R = \{ y: \exists x, (xRy) \} \\ 
+$$
+are called the _domain_ and _range_ of $R$ resp. and they exist as subsets of $\bigcup \bigcup R$. 
+
+The _inverse_ of $R$ is defined as 
+$$
+R^{-1} = \{ (x, y) : (y, x) \in R \}
+$$
+which exists as a subset of $\ran R \times \dom R$. That is, $xR^{-1}y \iff yRx$.
+```
+
+```{definition, name="Image"}
+The _image_, and _inverse image_ of $A$ under $R$ are defined as 
+$$
+R[A] = \{ y : \exists x \in A, xRy \} \\ 
+R^{-1}[A] = \{ x : \exists y \in A, xRy \}
+$$
+```
+
+```{theorem}
+$R^{-1}[A] = (R^{-1})[A]$. 
+```
+
+```{proof}
+\begin{align*}
+x \in R^{-1}[A] &\iff \exists y \in A, && xRy \\ 
+&\iff \exists y \in A, && y(R^{-1})x \\ 
+&\iff &&x \in (R^{-1})[A]
+\end{align*}
+```
+
+```{definition, name="Composite"}
+The _composition_ of two binary relations $S, R$ is defined as 
+$$
+S \circ R = \{ (x, z) : \exists y, (xRy \vee ySz) \}
+$$
+which exists as a subset of $\dom R \times \ran S$. Immediately, 
+$$
+\dom (R \circ S) = S^{-1}[\dom R]
+$$
+```
+
+```{proof}
+\begin{align*}
+x \in \dom (R \circ S) &\iff \exists z, && x(R \circ S)z \\ 
+&\iff \exists y, z, && xSy \vee yRz \\ 
+&\iff \exists y, && xSy \vee y \in \dom R \\ 
+&\iff && x \in S^{-1}[\dom R]
+\end{align*}
+```
+
+## Functions
+
+```{definition, name="Functions"}
+A relation $f$ is a _function_ or _mapping_ if 
+$$
+\forall x, y, z, (xfy \vee xfz \implies y = z) 
+$$
+or that for every $x \in \dom f$, there is a unique $y$ with $xfy$. 
+
+The unique $y$ is defined as $f(x)$ if $x \in \dom f$, i.e., $(x, y) \in f \iff x \in \dom f \vee y = f(x)$. 
+```
+
+```{proposition}
+For all functions $f, g$, $f = g$ iff $\dom f = \dom g$ and $f(x) = g(x)$ for all $x \in \dom f$. 
+```
+
+```{proof}
+If $\dom f = \dom g$ and $\forall x \in \dom f, (f(x) = g(x))$, 
+\begin{align*}
+(x, y) \in f &\implies x \in \dom f \vee y = f(x) \\ 
+&\implies x \in \dom g \vee y = g(x) \\ 
+&\implies (x, y) \in g
+\end{align*}
+The other direction follows from the property^[Specifically the [subsitution axiom of equality](https://en.wikipedia.org/wiki/First-order_logic#Equality_and_its_axioms)] of the equality $f = g$. 
+```
+
+```{definition}
+A function $f$ is 
+
+- _on_ $A$ if $\dom f = A$
+- _into_ $B$ if $\ran f \subset B$
+- _onto_ $B$ if $\ran f = B$
+  
+Denote $f: A \to B$ as a shorthand notation for $f$ is a function on $A$ and into $B$. 
+```
+
+```{definition, name="Identity"}
+The _identity function_ of a set $A$ is defined as the function 
+$$
+\iota_A = \{ (x, y) : x,y \in A \vee x = y \} 
+$$
+which exists as a susbet of $A \times A$. Therefore, $(x, x) \in \iota_A$ iff $x \in A$. 
+```
+
+```{definition, name="Restriction"}
+The _restriction_ of $f$ to $C$ is defined as the a subset of $f$:  
+$$
+f \restriction C = \{ (x, y) \in f: x \in C \}
+$$
+Immediately, $f \restriction C = f \circ \iota_C$. 
+```
+
+```{proof}
+\begin{align*}
+(x, y) \in f \circ \iota_C &\iff \exists z, && x \iota_C z \vee zfy \\ 
+&\iff \exists z, && z = x \vee x \iota_C z \vee zfy \\ 
+&\iff &&x \iota_C x \vee xfy \\ 
+&\iff &&x \in C \vee (x, y) \in f \\ 
+&\iff &&(x, y) \in f \restriction C
+\end{align*}
+```
+
+```{definition, name="Injection"}
+A function $f$ is _injective_ or _one-to-one_ if for any $x, y, z$, $xfz, yfz$ implies $x = y$. In other words, if $f(x) = f(y)$ then $x = y$ for all $x, y \in \dom f$. 
+```
+
+```{definition, name="Inverse"}
+A function $f$ is _invertible_ if its inverse $f^{-1}$ is also a function. 
+```
+
+```{theorem}
+A function $f$ is invertible iff $f$ is 1-1. 
+```
+
+```{proof}
+\begin{align*}
+&\forall x, y, z, && xfz \vee yfz \implies x = y \\ 
+\iff &\forall x, y, z, && zf^{-1}x \vee zf^{-1}y \implies x = y
+\end{align*}
+by the definition of $f^{-1}$. 
+```

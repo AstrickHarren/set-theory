@@ -1,0 +1,32 @@
+# Cardinals 
+
+```{theorem, name="Cantor"}
+For every set $X$, $|X| < |P(X)|$. 
+```
+
+```{proof}
+If $f: X \to P(X)$ is bijection, then the set 
+$$
+Y = \{ x \in X: x \ne f(x) \}
+$$
+is not in the range of $f$: $f(y) = Y$ implies $f(y) \ne Y$ for any $y \in X$. 
+```
+
+```{theorem, ,name="Cantor-Berstein"}
+For every set $X, Y$, if $|A| \le |B|$ and $|B| \le |A|$, then $|A| = |B|$. 
+```
+
+```{proof}
+Suppose $A_1 \subset B \subset A$ and $|A| = |A_1|$, claim $|A| = |B|$. If $f: A \to A_1$ is a bijection, recursively define 
+$$
+A_0 = A, \quad B_0 = B \\ 
+A_{n + 1} = f(A_n), \quad B_{n + 1} = f(B_n)
+$$
+then the function $g: A \to B$ given by 
+$$
+g(x) = \begin{cases}x & x \notin A_n - B_n, \forall n \\ f(x) & \text{otherwise} \end{cases}
+$$
+is a bijection. 
+<br>
+In general, if $f: A \to B, g: B \to A$ are 1-1, then $g(f(A)) \subset g(B) \subset A$ and $|A| = |g(f(A))|$, concluding $|A| = |B|$. 
+```

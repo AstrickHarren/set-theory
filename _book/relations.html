@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2.1 Relations | Axioms of Set Theory</title>
+  <meta name="description" content="A review in the set theory" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2.1 Relations | Axioms of Set Theory" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="A review in the set theory" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2.1 Relations | Axioms of Set Theory" />
+  
+  <meta name="twitter:description" content="A review in the set theory" />
+  
+
+<meta name="author" content="Astrick" />
+
+
+<meta name="date" content="2021-06-09" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="relations-and-functions.html"/>
+<link rel="next" href="functions.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        TeX: {
+            TagSide: "left",
+            Macros: {
+                dom: '\\mathop{\\mathrm{dom}}',
+                ran: '\\mathop{\\mathrm{ran}}'
+            }
+        }
+    });
+</script>
+
+
+
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A review of set theory</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
+<li class="chapter" data-level="1" data-path="axioms.html"><a href="axioms.html"><i class="fa fa-check"></i><b>1</b> Axioms</a></li>
+<li class="chapter" data-level="2" data-path="relations-and-functions.html"><a href="relations-and-functions.html"><i class="fa fa-check"></i><b>2</b> Relations and Functions</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="relations.html"><a href="relations.html"><i class="fa fa-check"></i><b>2.1</b> Relations</a></li>
+<li class="chapter" data-level="2.2" data-path="functions.html"><a href="functions.html"><i class="fa fa-check"></i><b>2.2</b> Functions</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="cardinals.html"><a href="cardinals.html"><i class="fa fa-check"></i><b>3</b> Cardinals</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Axioms of Set Theory</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="relations" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Relations</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-8" class="definition"><strong>Definition 2.4  (Relation)  </strong></span>A set <span class="math inline">\(R\)</span> is a <em>relation</em> if all of its elements are ordered pairs<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. Denote <span class="math inline">\(xRy\)</span> as <span class="math inline">\((x, y) \in R\)</span> for convinence. The sets
+<span class="math display">\[
+\dom R = \{ x: \exists y, (xRy) \} \\ 
+\ran R = \{ y: \exists x, (xRy) \} \\ 
+\]</span>
+are called the <em>domain</em> and <em>range</em> of <span class="math inline">\(R\)</span> resp. and they exist as subsets of <span class="math inline">\(\bigcup \bigcup R\)</span>.</p>
+The <em>inverse</em> of <span class="math inline">\(R\)</span> is defined as
+<span class="math display">\[
+R^{-1} = \{ (x, y) : (y, x) \in R \}
+\]</span>
+which exists as a subset of <span class="math inline">\(\ran R \times \dom R\)</span>. That is, <span class="math inline">\(xR^{-1}y \iff yRx\)</span>.
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-9" class="definition"><strong>Definition 2.5  (Image)  </strong></span>The <em>image</em>, and <em>inverse image</em> of <span class="math inline">\(A\)</span> under <span class="math inline">\(R\)</span> are defined as
+<span class="math display">\[
+R[A] = \{ y : \exists x \in A, xRy \} \\ 
+R^{-1}[A] = \{ x : \exists y \in A, xRy \}
+\]</span>
+</div>
+
+<div class="theorem">
+<span id="thm:unnamed-chunk-10" class="theorem"><strong>Theorem 2.2  </strong></span><span class="math inline">\(R^{-1}[A] = (R^{-1})[A]\)</span>.
+</div>
+
+<div class="proof">
+ <span class="proof"><em>Proof. </em></span> <span class="math display">\[\begin{align*}
+x \in R^{-1}[A] &amp;\iff \exists y \in A, &amp;&amp; xRy \\ 
+&amp;\iff \exists y \in A, &amp;&amp; y(R^{-1})x \\ 
+&amp;\iff &amp;&amp;x \in (R^{-1})[A]
+\end{align*}\]</span>
+</div>
+
+<div class="definition">
+<span id="def:unnamed-chunk-12" class="definition"><strong>Definition 2.6  (Composite)  </strong></span>The <em>composition</em> of two binary relations <span class="math inline">\(S, R\)</span> is defined as
+<span class="math display">\[
+S \circ R = \{ (x, z) : \exists y, (xRy \vee ySz) \}
+\]</span>
+which exists as a subset of <span class="math inline">\(\dom R \times \ran S\)</span>. Immediately,
+<span class="math display">\[
+\dom (R \circ S) = S^{-1}[\dom R]
+\]</span>
+</div>
+
+<div class="proof">
+ <span class="proof"><em>Proof. </em></span> <span class="math display">\[\begin{align*}
+x \in \dom (R \circ S) &amp;\iff \exists z, &amp;&amp; x(R \circ S)z \\ 
+&amp;\iff \exists y, z, &amp;&amp; xSy \vee yRz \\ 
+&amp;\iff \exists y, &amp;&amp; xSy \vee y \in \dom R \\ 
+&amp;\iff &amp;&amp; x \in S^{-1}[\dom R]
+\end{align*}\]</span>
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>Notice this makes <span class="math inline">\(\emptyset\)</span> also a relation<a href="relations.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="relations-and-functions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="functions.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": null,
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

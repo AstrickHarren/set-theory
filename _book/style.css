@@ -1,0 +1,7 @@
+div.theorem, div.definition, div.proposition {
+    padding-top: 10px;
+} 
+
+div.proof {
+  padding-top: 5px;  
+}

@@ -1,0 +1,21 @@
+--- 
+title: "Axioms of Set Theory"
+author: "Astrick"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+output: bookdown::gitbook
+documentclass: book
+# bibliography: [book.bib, packages.bib]
+biblio-style: apalike
+link-citations: yes
+# github-repo: rstudio/bookdown-demo
+description: "A review in the set theory"
+---
+
+# Preface {-}
+
+The famous Russell's paradox says not everything is a set, in particular 
+$$
+R = \{ x : x \notin x \}
+$$
+is not a set because $R \in R \iff R \notin R$. Hence, the existence of a certain set requires reason. An alternative way was devised by Zermelo and Fraenkel to found the existence of all sets upon a set of axioms that have not led to paradoxes for years, to which we give our deepest interest here in the book. 

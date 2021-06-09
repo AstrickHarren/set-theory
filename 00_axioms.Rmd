@@ -1,0 +1,38 @@
+# Axioms 
+```{theorem, name="Existence"} 
+There exists a set that contains no element, i.e. 
+$$
+\exists A, \forall x, (x \notin A) 
+$$
+```
+
+```{definition, name="Subset"}
+If every element of set $A$ is an element of set $B$, then $A$ is a _subset_ of $B$, denoted by $A \subset B$: 
+$$
+\forall A, B, ((\forall x, x \in A \implies x \in B) \implies A \subset B)
+$$
+```
+
+```{theorem, name="Extensionality"}
+Two sets are equal if they are subsets of each other. 
+$$
+\forall A, B, (A \subset B \vee B \subset A \implies A = B)
+$$
+```
+
+```{definition, name="Empty set"}
+The set that contains no element is unique, i.e., 
+$$
+\forall A, B, ((\forall x, x \notin A) \vee (\forall x, x \notin B) \implies A = B) 
+$$
+```
+
+```{proof}
+$\forall A, B$, 
+\begin{align*}
+(\forall x, x \notin A) \vee (\forall x, x \notin B) &\implies \neg (\forall x, x \in A)\\
+&\implies ((\forall x, x \in A) \implies (\forall x, x \in B)) \\
+&\implies A \subset B
+\end{align*}
+and similarly $B \subset A$, hence $A = B$. 
+```
